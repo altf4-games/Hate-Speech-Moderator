@@ -1,0 +1,180 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent; /* Make the background transparent */
+    color: white;
+    position: fixed; /* Make the header fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header is above other content */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+  }
+  
+  /* Add a background and shadow when the user scrolls */
+  .headerScrolled {
+    background: #ffffff; /* Dark background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  .headerScrolled nav a {
+    color: black;
+  }
+  .headerScrolled .logoText{
+    color: black;
+  }
+  .headerScrolled .bar {
+    background-color: rgb(0, 0, 0);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logoImage {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .logoText {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ecf0f1; /* Light text color */
+    transition: color 0.3s ease;
+  }
+  
+  .logoText:hover {
+    color: #00fcdb; /* Teal color on hover */
+  }
+  
+  /* Centering the navigation links */
+  .navWrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 55px;
+  }
+  
+  .nav a {
+    margin: 0 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #00fcdb; /* Teal color on hover */
+  }
+  
+  /* Login & Signup Buttons Wrapper (right-aligned) */
+  .authButtons {
+    margin-left: auto; /* Push buttons to the right */
+    display: flex;
+    gap: 20px;
+  }
+  
+  .authButtons button {
+    background-color: #b3bb15;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .authButtons button:hover {
+    background-color: rgb(207, 59, 0); /* Slightly darker green on hover */
+  }
+  
+  /* Hamburger Menu (Visible on mobile screens) */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 24px;
+    width: 30px;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #34495e; /* Darker shade for sidebar */
+    transition: left 0.3s ease;
+    z-index: 10;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidebarOpen {
+    left: 0; /* Sidebar slides in */
+  }
+  
+  .sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    color: #00fcdb; /* Teal color on hover */
+  }
+  
+  /* Regular horizontal navigation on larger screens */
+  .navHidden {
+    display: none;
+  }
+  
+  /* Make buttons visible on mobile screens */
+  @media (max-width: 768px) {
+    .authButtons {
+      display: flex; /* Make buttons visible on mobile */
+      margin-left: 0; /* Align them better on mobile if necessary */
+    }
+  
+    .navWrapper {
+      display: none; /* Hide regular nav on mobile */
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .sidebarOpen {
+      left: 0;
+    }
+  
+    /* Optionally adjust buttons on mobile (smaller size, padding, etc.) */
+    .authButtons button {
+      font-size: 1rem;
+      padding: 8px 16px;
+    }
+  }
